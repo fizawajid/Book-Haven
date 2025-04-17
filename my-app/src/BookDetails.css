@@ -1,0 +1,1025 @@
+/* Light Mode (Default) */
+:root {
+    --background: #ffffff;
+    --foreground: #222;
+    --card-bg: #f1f1f1;
+    --button-bg: black;
+    --button-text: white;
+    --button-hover-bg: #333;
+    --border-color: #ccc;
+    --input-bg: #ffffff;
+    --input-border: #ccc;
+    --input-focus-border: #555;
+    --star-filled: gold;
+    --star-empty: gray;
+    --text-color: #222;
+    --secondary-text: #666;
+}
+
+/* Dark Mode */
+.dark {
+    --background: #1a1a1a;
+    --foreground: #f1f1f1; /* White text in dark mode */
+    --card-bg: #333;
+    --button-bg: white;
+    --button-text: rgb(0, 0, 0);
+    --button-hover-bg: #ddd;
+    --border-color: #555;
+    --input-bg: #444;
+    --input-border: #666;
+    --input-focus-border: #888;
+    --star-filled: gold;
+    --star-empty: #666;
+    --text-color: #f1f1f1; /* White text in dark mode */
+    --secondary-text: #bbb;
+}
+
+/* General Styles */
+.book-image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.book-details {
+    max-width: 1000px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+    color: var(--foreground);
+}
+
+.bookDetails-back-button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--foreground); /* Use --foreground for text color */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.bookDetails-back-button:hover {
+    color: var(--button-bg);
+}
+
+.BookDetails-h1 h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: var(--foreground);
+}
+
+.book-container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+}
+.Book-Segment{
+    width: 100%;
+    
+}
+
+.book-cover-large {
+    width: 200px;
+    height: 280px;
+    border-radius: 8px;
+    background: var(--card-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mybook-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: var(--foreground); /* Ensure text color is set for the container */
+}
+
+.mybook-info p {
+    margin: 0;
+    font-size: 16px;
+    color: var(--foreground); /* Use --foreground for text color */
+}
+
+.mybook-info strong {
+    font-weight: bold;
+    color: var(--foreground); /* Use --foreground for text color */
+}
+
+.save-review-button {
+    width: 15%;
+    padding: 8px 20px;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.save-review-button:hover {
+    background-color: var(--button-hover-bg);
+}
+
+.review-textarea {
+    width: 97%;
+    min-height: 50px;
+    max-height: 150px;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    resize: vertical;
+    overflow-y: auto;
+    background-color: var(--input-bg);
+    color: var(--foreground);
+}
+
+.review-textarea:focus {
+    border-color: var(--input-focus-border);
+    outline: none;
+}
+
+.log-reading-button {
+    background: var(--button-bg);
+    color: var(--button-text);
+    padding: 10px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 210px;
+    margin: 1px 1px;
+    display: block;
+    text-align: center;
+    z-index: 1;
+}
+
+.log-reading-button:hover {
+    background: var(--button-hover-bg);
+}
+
+.rating-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.star {
+    cursor: pointer;
+    font-size: 20px;
+    transition: color 0.2s ease-in-out;
+}
+
+.star.filled {
+    color: var(--star-filled);
+}
+
+.star.empty {
+    color: var(--star-empty);
+}
+.tag-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.tag-pill {
+    padding: 5px 10px;
+    background-color: var(--card-bg);
+    color: var(--foreground);
+    border: 1px solid var(--border-color);
+    border-radius: 9999px;
+    font-size: 12px;
+    white-space: nowrap;
+    font-weight: bold;
+}
+
+.dark .tag-pill {
+  color:#000000;
+}
+
+/* Tab Navigation */
+/* Tab Navigation */
+.pretty-tabs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background-color: #ffffff;
+    padding: 10px;
+    gap: 6px;
+    margin-bottom: 16px; /* ⬅ Gap below the tab bar */
+  }
+
+  .dark .pretty-tabs {
+    background-color: #1e1d1d; /* Dark mode override */
+  }
+  
+  .pretty-tab {
+    background-color: transparent;
+    color: #444;
+    font-weight: 500;
+    padding: auto; /* ⬅ More padding = taller tabs */
+    border-radius: 6px;
+    text-align: center;
+    transition: all 0.2s ease;
+    font-size: 32px;
+  }
+  
+  .pretty-tab:hover {
+    background-color: #dcdcdc;
+  }
+  
+  .pretty-tab[aria-selected="true"] {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+/* /styling for AI Summary/ */
+.generate-summary-button {
+    padding: 0.5rem 1rem;
+    background: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 1rem;
+  }
+  
+  .summary-output {
+    background-color: #f9fafb;
+    padding: 1rem;
+    border-radius: 8px;
+    line-height: 1.5;
+  } 
+
+   .re-read-button {
+    background: var(--button-bg);
+    color: var(--button-text);
+    padding: 10px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 210px;
+    margin: 1px 1px;
+    display: block;
+    text-align: center;
+    z-index: 1;
+}
+
+  .re-read-button:hover {
+      background: var(--button-hover-bg);
+  } 
+
+
+  .reread-content {
+    color: black;
+  }
+
+  .upload-cover-button {
+    background: var(--button-bg);
+    color: var(--button-text);
+    padding: 10px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+     width: 90%;  /* <-- remove this */
+    max-width: 210px; /* optional, or remove if not needed */
+    margin: 1px;
+    display: inline-block; /* change from block to inline-block */
+    text-align: center;
+    font-size: 0.85rem; /* 👈 makes the text a bit smaller */
+    z-index: 1;
+}
+
+.upload-cover-button:hover {
+    background: var(--button-hover-bg);
+}
+/* Quotes Container */
+.quotes-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 0;
+  }
+  
+  /* Quote Form */
+  .quote-form {
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .quote-form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .quote-input-group {
+    flex: 1;
+  }
+
+  .quote-textarea {
+    width: 97%;
+    min-height: 90px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: vertical;
+    font-family: inherit;
+  }
+
+  
+  .quote-form-bottom {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .add-quote-button {
+    background: #141414;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+  }
+  
+  .add-quote-button:hover {
+    background:#333;
+  }
+  
+  .add-quote-button:disabled {
+    background-color: #000000;
+    cursor: not-allowed;
+  }
+  
+  /* Quotes List */
+  .quotes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .quote-item {
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    border-left: 4px solid #000000;
+    border-radius: 4px;
+    padding: 15px 40px 15px 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  .quote-text {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 8px;
+    font-style: italic;
+    color:#000000;
+  }
+  
+  .quote-date {
+    font-size: 12px;
+    color: #888;
+  }
+  
+  .delete-quote-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #cc0000;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+  }
+  
+  .delete-quote-button:hover {
+    opacity: 1;
+  }
+  
+  .no-quotes {
+    color: #888;
+    font-style: italic;
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  .quote-loading, .quotes-error {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+  }
+  
+  .quotes-error {
+    color: #cc0000;
+  }
+
+ /* Cover with edit button */
+.cover-with-edit {
+  position: relative;
+  display: inline-block;
+}
+
+.edit-cover-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: white;
+  color: black;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.edit-cover-button:hover {
+  transform: scale(1.1);
+}
+
+.edit-icon {
+  font-size: 16px;
+}
+/* Tags Section */
+.tags-section {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.add-tags-button {
+  background: var(--button-bg);
+  color: var(--button-text);
+  padding: 10px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 210px; /* Fixed width instead of max-width */
+  margin: 1px 1px;
+  display: block;
+  text-align: center;
+  transition: all 0.2s ease; /* Smooth transition for hover effects */
+}
+
+.add-tags-button:hover {
+  background: var(--button-hover-bg);
+}
+
+.tag-input-container {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+  width: 210px; /* Match the button width */
+}
+
+.tag-input {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  flex-grow: 1;
+  min-width: 0; /* Prevents input from overflowing */
+}
+
+.save-tag-button {
+  background: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  flex-shrink: 0; /* Prevents button from shrinking */
+}
+
+.save-tag-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.save-tag-button:hover:not(:disabled) {
+  background: var(--button-hover-bg);
+}
+
+.tag-pill {
+  background-color: #e0e0e0;
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.delete-tag-button {
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+  padding: 0;
+}
+
+.delete-tag-button:hover {
+  color: #040404;
+}
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .book-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .book-cover-large {
+        width: 160px;
+        height: 220px;
+    }
+
+    .mybook-info {
+        text-align: center;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Add these styles to your existing BookDetails.css file */
+/* .lending-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: #01050b;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+    transition: background-color 0.2s;
+  } */
+/*   
+  .lending-button:hover {
+    background-color: #31363c;
+  }
+   */
+
+
+  .dialog-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5); 
+    backdrop-filter: blur(6px); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .dialog-container {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    max-width: 500px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+  }
+
+  .lending-dialog {
+    max-width: 400px;
+    width: 100%;
+    margin-left: 200px; 
+    margin-top: 50px;
+  }
+  
+  /* yes */
+  .lending-dialog h2 {        
+    margin-top: 0;
+    color: #fffefe;
+    font-size: 1.5rem;
+  }
+  
+  .form-group {
+    margin-bottom: 16px;
+  }
+  
+  /* yes */
+  .form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+  }
+  
+
+  /* yes */
+  .form-group input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #060606;
+    /* border: 1px solid #ccc; */
+    border-radius: 4px;
+    font-size: 14px;
+  }
+
+
+  
+  .dialog-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  /* yes */
+  .cancel-button {
+    background-color: #f5f3f3;
+    color: #000000;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+
+
+  /* yes */
+  .lend-button:disabled {
+    background-color: #eeecec;
+    cursor: not-allowed;
+    color: rgb(0, 0, 0);
+  }
+
+
+  .lending-info {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+  }
+  
+  /* yes */
+  .lending-info h3 {
+    margin-top: 0;
+    /* color: #201f1f; */
+    color: #000000;
+    font-size: 1.2rem;
+  }
+
+  .dark .lending-info h3 {
+    margin-top: 0;
+    /* color: #201f1f; */
+    color: #f7f7f7;
+    font-size: 1.2rem;
+  }
+  
+  .clear-lending-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .clear-lending-button:hover {
+    background-color: var(--button-hover-bg);
+  }
+
+
+  .dark .clear-lending-button:hover {
+    background-color: var(--button-hover-bg);
+  }
+  
+  
+  .clear-lending-button:disabled {
+    background-color: #e9a8ad;
+    cursor: not-allowed;
+  }
+  
+
+  .lent-badge {
+    display: inline-block;
+    background-color: #dc3545;
+    color: white;
+    font-size: 12px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-top: 5px;
+  }
+   
+
+
+
+
+  .always-white {
+    color: white;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /* Add these styles to your existing BookDetails.css file */
+
+ /* yes */
+.lending-borrowing-section {
+    margin-top: 10px;
+    padding: 15px;
+    /* border: 1px solid #e0e0e0; */
+    border: 1px solid #565555;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+
+  .dark .lending-borrowing-section {
+    margin-top: 10px;
+    padding: 15px;
+    /* border: 1px solid #e0e0e0; */
+    border: 1px solid #716f6f;
+    border-radius: 8px;
+    background-color:  #1a1a1a; 
+  }
+  
+  /* yes */
+  .lending-borrowing-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  /* yes */
+  .lend-button,
+  .borrow-button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  /* yes */
+  .lend-button {
+    background-color: #000000;
+    color: white;
+  }
+  
+  /* yes */
+  .lend-button:hover {
+    background-color: var(--button-hover-bg); 
+  }
+
+    
+  /* yes */
+  .borrow-button {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+  }
+
+
+  
+  /* yes */
+  .borrow-button:hover {
+    background-color: var(--button-hover-bg);
+  }
+
+
+    /* class in book details */
+  .borrow-buttonn {    
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+
+  .borrow-buttonn:hover {
+    background-color: var(--button-hover-bg);
+  }
+
+
+  .dark .borrow-buttonn {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+
+  .dark .borrow-buttonn:hover {
+    background-color: var(--button-hover-bg);
+  }
+
+
+
+/*  */
+
+
+.dark .lend-button {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+}
+
+/* yes */
+.dark .lend-button:hover {
+  background-color: var(--button-hover-bg); 
+}
+
+/* yes */
+.dark .borrow-button {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+}
+
+/* yes */
+.dark .borrow-button:hover {
+  background-color: var(--button-hover-bg);
+}
+
+
+  
+  
+/* this */
+
+  .lending-info,
+  .borrowing-info {
+    padding: 10px;
+    border-radius: 6px;
+    margin-top: 5px;
+  
+  }
+  
+  .lending-info {
+    /* background-color: rgba(200, 205, 213, 0.605); */
+    background-color: rgba(255, 255, 255, 0.605);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .dark .lending-info {
+    /* background-color: rgba(200, 205, 213, 0.605); */
+    background-color: rgba(67, 65, 65, 0.605);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+   
+  .borrowing-info {
+    background-color: rgba(33, 150, 243, 0.1);
+    /* background-color: rgba(0, 0, 0, 0.1); */
+    border: 1px solid rgba(33, 150, 243, 0.3);
+  }
+
+
+/* this */
+
+
+  
+  .clear-lending-button,
+  .clear-borrowing-button {
+    margin-top: 10px;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.9em;
+    cursor: pointer;
+  }
+  
+  .dark .clear-lending-button {
+    /* background-color:rgba(153, 102, 255, 1); */
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+  }
+
+  .clear-lending-button {
+    /* background-color:rgba(153, 102, 255, 1); */
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+  }
+
+
+  .clear-borrowing-button {
+    background-color: rgb(231, 100, 100);
+    color: white;
+  }
+  
+  .lending-dialog,
+  .borrowing-dialog {
+    max-width: 400px;
+  }
+  
+  /* Add to allbooks.css for the badges */
+  .lent-badge,
+  .borrowed-badge {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: 500;
+    margin-top: 10px;
+  }
+  
+  .lent-badge {
+    /* background-color: #4caf50; */
+    background-color: #1f575f;
+    color: white;
+  }
+  
+  .borrowed-badge {
+    background-color: #076009;
+    color: white;
+  }
+  
+
+  /* for lent out and borrowd page */
+  .lending-badge,
+  .borrowing-badge {
+    display: block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.85em;
+    font-weight: 500;
+    /* margin-top: 8px; */
+    margin-top: 2px;
+  }
+  
+  .lending-badge {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .borrowing-badge {
+    background-color:rgb(46, 153, 151);
+    color: white;
+  }
+/*  */
+
+  .lending-date,
+  .borrowing-date {
+    font-size: 0.8em;
+    color: #666;
+    margin-top: 8px;
+  }
+  

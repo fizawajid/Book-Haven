@@ -1,0 +1,224 @@
+Genre Page Styles
+.genre-container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .page-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+  }
+  
+  .genre-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .genre-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .genre-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    min-width: 160px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 2px solid transparent;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 2px solid #515050;
+  }
+  
+  .genre-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .genre-card.selected {
+    border-color: var(--primary-color);
+    background-color: var(--primary-light);
+  }
+  
+  .genre-name {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+  }
+  
+  .genre-count {
+    font-size: 0.9rem;
+    color: var(--secondary-text);
+    display: block;
+  }
+  
+  .genre-books {
+    margin-top: 1rem;
+  }
+  
+  .genre-books h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    color: var(--text-color);
+  }
+  
+  .books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 13.5px;
+    justify-content:center;}
+  
+  .book-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* border: 2px solid #a4a2a2; */
+  }
+  
+  .book-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .book-cover {
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+  }
+  
+  .book-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .no-cover {
+    width: 100%;
+    height: 100%;
+    background-color: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #666;
+  }
+  
+  .book-info {
+    padding: 1rem;
+  }
+  
+  .book-title {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+  
+  .book-author {
+    font-size: 0.9rem;
+    color: var(--secondary-text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .loading, .error, .no-genres {
+    text-align: center;
+    padding: 2rem;
+    color: var(--secondary-text);
+  }
+  
+  .error {
+    color: #e74c3c;
+  }
+  
+  
+  @media (min-width: 768px) {
+    .genre-content {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+    
+    .genre-list {
+      flex-direction: column;
+      min-width: 200px;
+      max-width: 250px;
+    }
+    
+    .genre-books {
+      flex: 1;
+      margin-top: 0;
+    }
+  }
+  
+  
+  :root {
+    --primary-color: #121212;
+    --primary-light: rgba(74, 144, 226, 0.1);
+    --card-bg: #fff;
+    --text-color: #333;
+    --secondary-text: #666;
+  }
+  
+
+  /* .dark {
+    --primary-color: #0e0e0e;
+    --primary-light: rgba(227, 231, 234, 0.796);
+    --card-bg: #e3dfdf;
+    --text-color: #222020;
+    --secondary-text: #242323; 
+  } */
+
+  .dark {
+    
+    --primary-color: #0e0e0e;
+    --primary-light: rgba(227, 231, 234, 0.796);
+    /* --card-bg: #505050; Your white-ish background for cards */
+    --card-bg:#2a2a2a;
+    
+    /* --card-bg: #e3dfdf; */
+    --text-color: #161515; /* General text color */
+    /* --secondary-text: #242323; Secondary text color */
+    --secondary-text: #706f6f;
+    --genre-heading-color: #f8f6f6; /* New variable for genre headings */
+    --genre-description-color: #676666; /* New variable for genre descriptions */
+    /* --genre-description-color: #4b4b4b; */
+  }
+
+  .dark .genre-name {
+    color: var(--genre-heading-color);
+  }
+  
+  .dark .genre-books h2 {
+    color: var(--genre-heading-color);
+  }
+
+  .dark .page-title {
+    color: #eeeaea; /* Change to your desired color */
+  }
+  
+  /* Styling for genre text in dark mode */
+  .dark .genre-count {
+    color: var(--genre-description-color);
+  }
+  /* .dark .book-card {
+    border: 2px solid #737373;
+  } */
