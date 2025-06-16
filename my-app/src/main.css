@@ -1,0 +1,782 @@
+/* 
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(0, 0, 0);
+  color: white ;
+  padding: 0.025rem 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+   z-index: 1000;
+}
+
+.header-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.header-buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-buttons button {
+  background: none;
+  border: none;
+  color: white ;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.header-buttons button:hover {
+  color: gray;
+}
+
+.cover-name {
+  text-align: center;
+  font-size: 0.9rem;
+  margin: 5px 0; 
+}
+.input-field {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc ;
+  border-radius: 5px;
+}
+
+.input-field.small {
+  flex: 1; 
+}
+
+.flex-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px; 
+  width: 100%;
+}
+
+
+.radio-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 10px;
+}
+.toggle-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px; 
+  margin: 10px 0;
+  width: 100;
+}
+.toggle-button {
+  flex: 1;
+  padding: 10px 20px; 
+  border: 1px solid #000; 
+  cursor: pointer;
+  background: #000; 
+  color: white ;
+  border-radius: 5px;
+  transition: background 0.3s ease-in-out;
+  text-align: center;
+}
+
+.toggle-button:hover {
+  background: #333; 
+}
+
+.toggle-button.active {
+  background: #000; 
+  color: white ;
+}
+
+.star {
+  font-size: 24px; 
+  color: #ccc ;
+  transition: color 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.star:hover,
+.star.filled {
+  color: gold;
+}
+
+
+.textarea {
+  height: 80px;
+  resize: none;
+}
+
+
+.tag {
+  background: #ddd ;
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.remove-tag-btn {
+  background: none;
+  border: none;
+  font-size: 12px;
+  cursor: pointer;
+  color: black;
+}
+.tag-input-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 5px;
+  
+}
+
+.tag-input {
+  flex-grow: 1;
+}
+
+
+.add-tag-btn {
+  background: black;
+  color: white ;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s ease-in-out;
+  width: 100px;
+  text-align: center;
+  margin-top: -11px; 
+}
+
+.add-tag-btn:hover {
+  background: #333;
+}
+
+
+.tags-display {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+.tag {
+  background: #ddd ;
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-container {
+  background: white ;
+  padding: 20px;
+  width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+
+.modal-title {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: black !important;
+}
+.close-button:hover {
+  color: gray;
+}
+
+
+.modal-container input,
+.modal-container select,
+.modal-container textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 0.75rem;
+  border: 1px solid gray;
+  border-radius: 4px;
+}
+
+.modal-container textarea {
+  resize: vertical;
+}
+
+.modal-content {
+  flex-grow: 1;
+  overflow-y: auto; 
+  padding: 20px;
+  max-height: 70vh; 
+}
+
+
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px; 
+  width: 100%;
+}
+
+.modal-footer button {
+  border: none;
+  cursor: pointer;
+  flex: 1;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.modal-footer .cancel-btn {
+  background-color: rgb(59, 58, 58);
+  color: white ;
+}
+
+.modal-footer .add-btn {
+  background-color: black;
+  color: white ;
+}
+
+.modal-footer .cancel-btn:hover {
+  background-color: rgb(45, 44, 44);
+}
+
+.modal-footer .add-btn:hover {
+  background-color: #333;
+}
+
+.cancel-btn {
+  background: #ccc ;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-btn {
+  background: #4caf50;
+  color: white ;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.input-error {
+  border: 1px solid red;
+  background-color: #ffe6e6;
+}
+.error-text {
+  color: red;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc ;
+  border-radius: 5px;
+  background-color: white ; 
+  color: black; 
+}
+
+
+@media (prefers-color-scheme: dark) {
+  .input-field {
+    background-color: white !important;
+    color: black !important; 
+    border: 1px solid #555; 
+  }
+
+
+  .modal-container input,
+  .modal-container select,
+  .modal-container textarea {
+    background-color: white !important;
+    color: black !important;
+  }
+  
+  .textarea {
+    background-color: white !important;
+    color: black !important;
+  }
+  
+  .tag-input {
+    background-color: white !important;
+    color: black !important;
+  }
+}
+
+.cover-upload input[type="file"] {
+  background-color: white !important;
+  color: black;
+  padding: 8px;
+  border-radius: 4px;
+  width: 100%;
+} */
+
+
+
+/*Global Styles*/
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(0, 0, 0);
+  color: white ;
+  padding: 0.025rem 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+   z-index: 1000;
+}
+
+.header-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.header-buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-buttons button {
+  background: none;
+  border: none;
+  color: white ;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.header-buttons button:hover {
+  color: gray;
+}
+
+.cover-name {
+  text-align: center;
+  font-size: 0.9rem;
+  margin: 5px 0; 
+}
+
+/* New styles for cover upload with remove button */
+
+ .cover-selected {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 8px 12px;
+  margin-top: -5px;   /* Move up */
+  margin-left: 18px;   /* Move right */
+}
+
+
+.cover-selected .cover-name {
+  margin: 0;
+  flex-grow: 1;
+  text-align: left;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+
+.remove-cover-btn {
+  background: transparent;
+  color: #ff4444;
+  border: none;
+  font-size: 17px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  line-height: 1;
+  transition: color 0.3s ease;
+}
+
+.remove-cover-btn:hover {
+  color: #cc0000;
+}
+
+
+.input-field {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc ;
+  border-radius: 5px;
+}
+
+.input-field.small {
+  flex: 1; 
+}
+
+.flex-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px; 
+  width: 100%;
+}
+
+
+.radio-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 10px;
+}
+.toggle-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px; 
+  margin: 10px 0;
+  width: 100;
+}
+.toggle-button {
+  flex: 1;
+  padding: 10px 20px; 
+  border: 1px solid #000; 
+  cursor: pointer;
+  background: #000; 
+  color: white ;
+  border-radius: 5px;
+  transition: background 0.3s ease-in-out;
+  text-align: center;
+}
+
+.toggle-button:hover {
+  background: #333; 
+}
+
+.toggle-button.active {
+  background: #000; 
+  color: white ;
+}
+
+.star {
+  font-size: 24px; 
+  color: #ccc ;
+  transition: color 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.star:hover,
+.star.filled {
+  color: gold;
+}
+
+
+.textarea {
+  height: 80px;
+  resize: none;
+}
+
+
+.tag {
+  background: #ddd ;
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.remove-tag-btn {
+  background: none;
+  border: none;
+  font-size: 12px;
+  cursor: pointer;
+  color: black;
+}
+.tag-input-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 5px;
+  
+}
+
+.tag-input {
+  flex-grow: 1;
+}
+
+
+.add-tag-btn {
+  background: black;
+  color: white ;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s ease-in-out;
+  width: 100px;
+  text-align: center;
+  margin-top: -11px; 
+}
+
+.add-tag-btn:hover {
+  background: #333;
+}
+
+
+.tags-display {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+.tag {
+  background: #ddd ;
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-container {
+  background: white ;
+  padding: 20px;
+  width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+
+.modal-title {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: black !important;
+}
+.close-button:hover {
+  color: gray;
+}
+
+
+.modal-container input,
+.modal-container select,
+.modal-container textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 0.75rem;
+  border: 1px solid gray;
+  border-radius: 4px;
+}
+
+.modal-container textarea {
+  resize: vertical;
+}
+
+.modal-content {
+  flex-grow: 1;
+  overflow-y: auto; 
+  padding: 20px;
+  max-height: 70vh; 
+}
+
+
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px; 
+  width: 100%;
+}
+
+.modal-footer button {
+  border: none;
+  cursor: pointer;
+  flex: 1;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.modal-footer .cancel-btn {
+  background-color: rgb(59, 58, 58);
+  color: white ;
+}
+
+.modal-footer .add-btn {
+  background-color: black;
+  color: white ;
+}
+
+.modal-footer .cancel-btn:hover {
+  background-color: rgb(45, 44, 44);
+}
+
+.modal-footer .add-btn:hover {
+  background-color: #333;
+}
+
+.cancel-btn {
+  background: #ccc ;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-btn {
+  background: #4caf50;
+  color: white ;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.input-error {
+  border: 1px solid red;
+  background-color: #ffe6e6;
+}
+.error-text {
+  color: red;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+
+/* Add this to your global styles */
+.input-field {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc ;
+  border-radius: 5px;
+  background-color: white ; /* Default light mode background */
+  color: black; /* Default light mode text color */
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+  .input-field {
+    background-color: white !important; /* Force white background in dark mode */
+    color: black !important; /* Force black text in dark mode */
+    border: 1px solid #555; 
+    /* border: 1px solid #e5e4e4; */
+  }
+
+  /* If you have any specific input types or classes */
+  .modal-container input,
+  .modal-container select,
+  .modal-container textarea {
+    background-color: white !important;
+    color: black !important;
+  }
+  
+  .textarea {
+    background-color: white !important;
+    color: black !important;
+  }
+  
+  .tag-input {
+    background-color: white !important;
+    color: black !important;
+  }
+
+  /* Dark mode styles for cover selection */
+  .cover-selected {
+    background-color: #2a2a2a !important;
+    border: 1px solid #555 !important;
+  }
+
+  .cover-selected .cover-name {
+    color: #e0e0e0 !important;
+  }
+}
+
+.cover-upload input[type="file"] {
+  background-color: white !important;
+  color: black;
+  padding: 8px;
+  border-radius: 4px;
+  width: 100%;
+}

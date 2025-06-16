@@ -1,0 +1,90 @@
+
+.recommendation-header-r{
+    position: relative;
+    margin-left: 1px;
+}
+.fetched-books-r{
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+}
+.genre-selector-r {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+.genre-selector-r button {
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: none;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  .genre-selector-r button.active-genre {
+    background-color:black;
+    color: white;
+  }
+  
+  .recommendation-list-r {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .recommendation-item-r {
+    display: flex;
+    gap: 20px; /* space between the image and the details */
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: #fdfdfd;
+    align-items: flex-start; /* align the items to the start */
+  }
+  
+  .book-image-container-r {
+    flex-shrink: 0; /* prevent image container from shrinking */
+    width: 120px; /* fixed width for the image */
+  }
+  
+  .book-cover-r {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* ensures no stretching */
+    border-radius: 5px;
+  }
+  
+  .book-details-r {
+    flex: 1;
+    max-width: 100%; /* ensures text doesn't overflow */
+  }
+  
+  .book-details-r h3 {
+    color:black;
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  
+  .book-details-r p {
+    color:black;
+    margin: 5px 0;
+  }
+  .book-details-r a {
+    text-decoration: none; /* Remove underline */
+    color: black; /* Same color as genre buttons */
+    font-weight: bold; /* Optional, to match genre button style */
+    padding: 5px 10px;
+    border-radius: 20px;
+    background-color: #f0f0f0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .book-details-r a:hover {
+    background-color: black;
+    color: white;
+  }
+   

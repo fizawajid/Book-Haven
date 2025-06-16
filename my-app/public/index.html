@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookHaven</title>
+    <link id="favicon" rel="icon" href="icon2.png" />
+    <link rel="stylesheet" href="global.css" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="App.jsx"></script>
+
+    <script>
+      function updateFavicon() {
+        const favicon = document.getElementById('favicon');
+        const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        favicon.href = isDark ? 'darkmode.png' : 'lightmode.png';
+      }
+
+      // Run on load
+      updateFavicon();
+
+      // Update if user changes theme while page is open
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateFavicon);
+    </script>
+  </body>
+</html>

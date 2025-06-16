@@ -1,0 +1,65 @@
+/* Container Styling */
+.reread-history-table {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Heading Styling */
+  .reread-history-table h3 {
+    font-size: 1.25rem; /* Equivalent to text-xl */
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #4A4A4A; /* Dark gray color */
+  }
+  
+  /* Table Styling */
+  .reread-history-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+  }
+  
+  /* Table Header Styling */
+  .reread-history-table thead {
+    background-color: #f1f1f1; /* Light gray */
+    color: #333; /* Dark gray */
+  }
+  
+  .reread-history-table th {
+    padding: 12px;
+    text-align: left;
+    font-weight: 500;
+    border-bottom: 2px solid #ddd; /* Light border */
+    background-color: #f9f9f9; /* Slightly lighter gray */
+  }
+  
+  /* Table Body Styling */
+  .reread-history-table tbody {
+    background-color: #fff;
+  }
+  
+  .reread-history-table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd; /* Light border */
+    text-align: left;
+    color: black;
+  }
+  
+  .reread-history-table tr:nth-child(odd) {
+    background-color: #f9f9f9; /* Alternate row background */
+  }
+  
+  .reread-history-table tr:hover {
+    background-color: #f1f1f1; /* Hover effect */
+  }
+  
+  /* No Data Message Styling */
+  .reread-history-table p {
+    color: #9E9E9E;
+    text-align: center;
+    margin-top: 16px;
+    font-size: 1rem;
+  }
+  

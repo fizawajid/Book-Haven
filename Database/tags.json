@@ -1,0 +1,20 @@
+{
+    "id": 1,
+    "bookid": 1,
+    "tag": "Emotional"
+  }
+  {
+    "id": 2,
+    "bookid": 1,
+    "tag": "Fiction"
+  }
+  {
+    "id": 3,
+    "bookid": 2,
+    "tag": "Fiction"
+  }
+  {
+    "id": 4,
+    "bookid": 2,
+    "tag": "Philosophy"
+  }

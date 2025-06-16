@@ -1,0 +1,284 @@
+.admin-profile-menu {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 10px;
+}
+
+.profile-trigger {
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.profile-trigger:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.profile-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.default-avatar {
+  width: 40px;
+  height: 40px;
+  color: #666;
+}
+
+.profile-dropdown {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  margin-bottom: 10px;
+  animation: slideIn 0.2s ease-out;
+}
+
+.profile-header {
+  padding: 20px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+.profile-pic-container {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 15px;
+}
+
+.profile-pic-container .profile-image {
+  width: 100%;
+  height: 100%;
+}
+
+.edit-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+  cursor: pointer;
+}
+
+.profile-pic-container:hover .edit-overlay {
+  opacity: 1;
+}
+
+.edit-overlay svg {
+  color: white;
+  font-size: 24px;
+}
+
+.hidden-input {
+  display: none;
+}
+
+.profile-info h3 {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.profile-info p {
+  margin: 5px 0 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.profile-actions {
+  padding: 10px;
+}
+
+.profile-actions button {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: #333;
+  transition: background-color 0.3s;
+}
+
+.profile-actions button:hover {
+  background-color: #f5f5f5;
+}
+
+.profile-actions button svg {
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+}
+
+.modal-content h2 {
+  margin: 0 0 20px;
+  color: #333;
+}
+
+.modal-content p {
+  margin: 0 0 20px;
+  color: #666;
+}
+
+.password-input-container {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.password-input-container input {
+  width: 100%;
+  padding: 10px;
+  padding-right: 40px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #666;
+  padding: 0;
+}
+
+.toggle-password:hover {
+  color: #333;
+}
+
+.error-text {
+  color: #dc3545;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.modal-actions button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.modal-actions button:first-child {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.modal-actions button:last-child {
+  background-color: #007bff;
+  color: white;
+}
+
+.modal-actions button:hover {
+  opacity: 0.9;
+}
+
+.delete-button {
+  background-color: #dc3545 !important;
+}
+
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 15px 20px;
+  border-radius: 4px;
+  color: white;
+  font-size: 14px;
+  z-index: 1001;
+  animation: slideIn 0.3s ease-out;
+}
+
+.notification.success {
+  background-color: #28a745;
+}
+
+.notification.error {
+  background-color: #dc3545;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-dropdown {
+    width: 100%;
+  }
+  
+  .modal-content {
+    width: 95%;
+  }
+}
+
+.profile-name {
+  font-size: 14px;
+  color: white;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+} 

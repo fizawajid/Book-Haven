@@ -1,0 +1,59 @@
+[
+    {
+      "reader_id": 1,
+      "bookId": 7,
+      "duration": 300,
+      "real_time": 25,
+      "date": "2025-04-08T18:15:00.000Z",
+      "pages_read": 15
+    },
+    {
+      "reader_id": 1,
+      "bookId": 7,
+      "duration": 180,
+      "real_time": 14,
+      "date": "2025-04-07T17:30:00.000Z",
+      "pages_read": 10
+    },
+    {
+      "reader_id": 1,
+      "bookId": 7,
+      "duration": 240,
+      "real_time": 20,
+      "date": "2025-04-06T16:00:00.000Z",
+      "pages_read": 12
+    },
+    {
+      "reader_id": 1,
+      "bookId": 7,
+      "duration": 150,
+      "real_time": 13,
+      "date": "2025-04-05T19:45:00.000Z",
+      "pages_read": 8
+    },
+    {
+      "reader_id": 1,
+      "bookId": 7,
+      "duration": 90,
+      "real_time": 8,
+      "date": "2025-04-04T15:00:00.000Z",
+      "pages_read": 5
+    },
+    {
+      "reader_id": 1,
+      "bookId": 7,
+      "duration": 600,
+      "real_time": 50,
+      "date": "2025-04-03T20:00:00.000Z",
+      "pages_read": 25
+    },
+    {
+      "reader_id": 1,
+      "bookId": 8,
+      "duration": 360,
+      "real_time": 30,
+      "date": "2025-03-22T18:30:00.000Z",
+      "pages_read": 18
+    }
+  ]
+  
